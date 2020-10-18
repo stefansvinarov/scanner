@@ -17,10 +17,10 @@ class c:
     UNDERLINE = '\033[4m'
 
 while True:
-    a = str(input('Enter your API key or type \'key\' to use mine : \n')) #my hardcoded key, to be used with caution
+    a = str(input('Enter your API key or type \'key\' to use mine : \n'))
     if a == 'key':
-        a = '7SmNpvcyYPmCol9ZiBWpT0NYl2IYsuRW'
-        print(c.WARNING + 'YOu are using Hectus\' key! Dont be seraching for nuclear power plants plx :>' + c.RESET + '\n' + 'Key: ' +  a)
+        a = 'HARD-CODED KEY PLACEHOLDER' #Insert your own shodan api key here, I removed mine to avoid abuse but you can hard-code one here.
+        print(c.WARNING + 'YOu are using Stefan\'s key! Don\'t be seraching for nuclear power plants, please :>' + c.RESET + '\n' + 'Key: ' +  a)
 
     key = input('Is this your key (y/n) :' + '\n' + a + '\n')
 
@@ -30,11 +30,11 @@ while True:
         try: 
             print(c.OKGREEN + 'Proceeding....' + '\n' + 'Enter your search: \n')
             api = shodan.Shodan(a)
-            q = str(input('>>>')) #querry
+            q = str(input('>>>')) #query
             result = api.search(q)
             f = open('rezultz.txt', mode='wt', encoding='utf-8')
             for i in result['matches']:
-                time.sleep(0.05)
+                time.sleep(0.05) #this is so we don't flood shodan with our requests, otherwise it will block us.
                 f.writelines('{}'.format(i['ip_str']))
                 f.write('\n')
                 print('IP: {}'.format(i['ip_str']))
@@ -46,9 +46,7 @@ while True:
         f.close()
 
     else:    
-        print(b + ' is an invalid choice please use \'n\' or \'y\' only')
-        break
-
+        print(key + ' is an invalid choice please use \'n\' or \'y\' only')
 
 print(c.OKBLUE + '100 hosts added in your rezultz.txt file. Resolving targets\' information on ports 1-81 and 8080 using stealth syn scan....' + c.OKGREEN)
 nm = nmap.PortScanner() #short for nmap scanner
@@ -57,7 +55,7 @@ try:
     f = open('rezultz.txt', mode='rt', encoding='utf-8')
     for i in f:
         j = api.host(i)
-        time.sleep(0.7) #so it doesn't flood shodan with requests.
+        time.sleep(0.7) #for better visibility
         print('''
         IP: {}
         Org: {}
