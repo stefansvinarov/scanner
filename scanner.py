@@ -20,7 +20,7 @@ while True:
     a = str(input('Enter your API key or type \'key\' to use mine : \n'))
     if a == 'key':
         a = 'HARD-CODED KEY PLACEHOLDER' #Insert your own shodan api key here, I removed mine to avoid abuse but you can hard-code one here.
-        print(c.WARNING + 'YOu are using Stefan\'s key! Don\'t be seraching for nuclear power plants, please :>' + c.RESET + '\n' + 'Key: ' +  a)
+        print(c.WARNING + 'You are using Stefan\'s key! Use it with caution, please :>' + c.RESET + '\n' + 'Key: ' +  a)
 
     key = input('Is this your key (y/n) :' + '\n' + a + '\n')
 
