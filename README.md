@@ -7,7 +7,8 @@ the searches one may be interested in.
 
 USAGE:
 
-Execute the script (no root required) and enter your shodan API key when prompted to.
+Execute the script (su permissions required because of the nmap part) and enter your shodan 
+API key when prompted to.
 
 NOTE: Initially there was a hard-coded key in the script I removed it from this repo
 due to obvious reasons.
