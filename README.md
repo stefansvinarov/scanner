@@ -87,6 +87,7 @@ SSL
     ssl.cipher.version
     ssl.version
 
-Full list of filters here: 
+Full list of filters here:
+
 NOTE: Some, like the 'vuln' one, require a payed key.
 https://beta.shodan.io/search/filters
