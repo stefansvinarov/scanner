@@ -88,6 +88,6 @@ SSL
     ssl.version
 
 Full list of filters here:
-
-NOTE: Some, like the 'vuln' one, require a payed key.
 https://beta.shodan.io/search/filters
+NOTE: Some, like the 'vuln' one, require a payed key.
+
