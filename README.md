@@ -1,5 +1,5 @@
 # scanner
-Python script querrying Shodan for different searches
+Python script querying Shodan for different searches
 
 
 This script utilizes the shodan and nmap python libraries to automate, simplify, fasten 
